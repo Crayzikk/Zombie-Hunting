@@ -8,18 +8,21 @@ public class PlayerMovement : MonoCache
     private const int rotationLeft = 180;
 
     private bool isRunning;
-
     private Animator animator;
+
+    public static bool isPlayning;
 
     private void Start()
     {
+        isPlayning = false;
         animator = GetComponent<Animator>();
     }
 
     // Updater
     public override void OnTick()
     {
-        MovePlayer();
+        if(isPlayning)
+            MovePlayer();
     }
 
     private void MovePlayer()
