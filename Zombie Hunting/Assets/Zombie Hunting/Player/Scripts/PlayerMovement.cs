@@ -6,15 +6,20 @@ public class PlayerMovement : MonoCache
     private float speed = 5f;
     private const int rotationRight = 0;
     private const int rotationLeft = 180;
+    private float countdownTime = 0.2f;
+    private float timer;
 
     private bool isRunning;
     private Animator animator;
 
     public static bool isPlayning;
+    public static bool playerAttacked;
 
     private void Start()
     {
+        playerAttacked = false;
         isPlayning = false;
+        timer = countdownTime;
         animator = GetComponent<Animator>();
     }
 
@@ -22,7 +27,21 @@ public class PlayerMovement : MonoCache
     public override void OnTick()
     {
         if(isPlayning)
+        {
             MovePlayer();
+        }
+        
+        if(playerAttacked)
+        {
+            timer -= Time.deltaTime;
+
+            if(timer < 0f)
+            {
+                timer = countdownTime;
+                playerAttacked = false;
+                animator.SetBool("Atack", false);
+            }
+        }
     }
 
     private void MovePlayer()

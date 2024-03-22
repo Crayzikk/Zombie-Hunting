@@ -4,6 +4,7 @@ public class LookAtMouse : MonoBehaviour
 {
     void Update()
     {
+
         // Отримання позиції курсора миші у 2D просторі
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f; // Задання Z-координати, оскільки ми працюємо у 2D просторі
