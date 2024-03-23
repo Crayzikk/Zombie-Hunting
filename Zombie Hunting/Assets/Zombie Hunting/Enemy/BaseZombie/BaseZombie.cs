@@ -9,15 +9,14 @@ public class BaseZombie : Enemy
 
     private Animator animator;
     private Rigidbody2D rigidbody;
-    private float countdownTime = 1f;
-    private float timer;
+    private Timer timer;
 
     public override int damage { get; set; } = 15;
     public Transform player;
 
     private void Start() 
     {
-        timer = countdownTime;
+       timer = new Timer(0.6f);
     }
 
     // Updater
@@ -29,13 +28,7 @@ public class BaseZombie : Enemy
         }
         else if(isAttack)
         {
-            timer -= Time.deltaTime;
-
-            if(timer < 0f)
-            {
-                timer = countdownTime;
-                isAttack = false;
-            }
+            timer.RunTimer(SetFalseIsAttack);
         }
     }
     
@@ -54,4 +47,6 @@ public class BaseZombie : Enemy
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         RotationZombie((transform.position.x < player.position.x) ? rotationRight : rotationLeft);
     }
+
+    private void SetFalseIsAttack() => isAttack = false;
 }

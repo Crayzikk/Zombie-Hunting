@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoCache
 {
-    [SerializeField]
-    private float speed = 5f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float time = 0.8f;
+
     private const int rotationRight = 0;
     private const int rotationLeft = 180;
-    private float countdownTime = 0.2f;
-    private float timer;
-
+    private Timer timer;
     private bool isRunning;
     private Animator animator;
 
@@ -19,28 +18,16 @@ public class PlayerMovement : MonoCache
     {
         playerAttacked = false;
         isPlayning = false;
-        timer = countdownTime;
+        timer = new Timer();
         animator = GetComponent<Animator>();
     }
 
     // Updater
     public override void OnTick()
     {
-        if(isPlayning)
+        if(isPlayning && !playerAttacked)
         {
             MovePlayer();
-        }
-        
-        if(playerAttacked)
-        {
-            timer -= Time.deltaTime;
-
-            if(timer < 0f)
-            {
-                timer = countdownTime;
-                playerAttacked = false;
-                animator.SetBool("Atack", false);
-            }
         }
     }
 
@@ -72,5 +59,12 @@ public class PlayerMovement : MonoCache
     private void SetAnimation(bool run)
     {
         animator.SetBool("running", run);
+    }
+
+    public void EndAttack()
+    {
+        Debug.Log("dfgf");
+        playerAttacked = false;
+        animator.SetBool("Atack", false);
     }
 }

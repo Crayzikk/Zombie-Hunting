@@ -7,6 +7,7 @@ public class BaseWeapon : MonoCache
     public int damage = 25; 
 
     [SerializeField] private Collider2D gameObjectCollider;
+    
     private List<Collider2D> triggers = new List<Collider2D>();
     private ContactFilter2D filter;
     private Animator animator;
@@ -26,7 +27,7 @@ public class BaseWeapon : MonoCache
 
     public override void OnTick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !PlayerMovement.playerAttacked)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !PlayerMovement.playerAttacked && PlayerMovement.isPlayning)
         {
             Attack();
         }
@@ -35,7 +36,6 @@ public class BaseWeapon : MonoCache
     private void Attack() 
     {
         animator.SetBool("Atack", true);
-
         PlayerMovement.playerAttacked = true;
         triggers.Clear();
 

@@ -2777,6 +2777,8 @@ GameObject:
   - component: {fileID: 587464734}
   - component: {fileID: 587464733}
   - component: {fileID: 587464732}
+  - component: {fileID: 587464735}
+  - component: {fileID: 587464736}
   m_Layer: 6
   m_Name: Zombie_1
   m_TagString: Untagged
@@ -2812,7 +2814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttack: 0
-  health: 100
+  healthEnemy: 100
   speed: 3
   player: {fileID: 221284773}
 --- !u!95 &587464733
@@ -2885,6 +2887,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &587464735
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587464730}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.027887583, y: -0.013943732}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.70253325, y: 0.9163375}
+  m_EdgeRadius: 0
+--- !u!50 &587464736
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587464730}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 8.61
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &592780630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3662,7 +3711,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059743643, y: -0.03644663}
+  m_Offset: {x: 0.03972411, y: -0.03644663}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3673,7 +3722,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8570714, y: 0.9854213}
+  m_Size: {x: 0.81703234, y: 0.9854213}
   m_EdgeRadius: 0
 --- !u!1 &811371165
 GameObject:
@@ -14864,7 +14913,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19572143, y: 0.2609619}
+  m_Offset: {x: 0.36199355, y: 0.16360122}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -14875,7 +14924,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6085571, y: 1.0869873}
+  m_Size: {x: 0.9411013, y: 1.2817086}
   m_EdgeRadius: 0
 --- !u!1 &1838879309
 GameObject:
