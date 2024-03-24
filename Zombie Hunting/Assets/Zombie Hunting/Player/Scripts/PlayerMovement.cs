@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoCache
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float time = 0.8f;
+    [SerializeField] private float time = 0.001f;
 
     private const int rotationRight = 0;
     private const int rotationLeft = 180;
@@ -13,6 +13,7 @@ public class PlayerMovement : MonoCache
 
     public static bool isPlayning;
     public static bool playerAttacked;
+    
 
     private void Start()
     {
@@ -63,7 +64,6 @@ public class PlayerMovement : MonoCache
 
     public void EndAttack()
     {
-        Debug.Log("dfgf");
         playerAttacked = false;
         animator.SetBool("Atack", false);
     }

@@ -44,8 +44,15 @@ public class BaseZombie : Enemy
 
     protected override void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        RotationZombie((transform.position.x < player.position.x) ? rotationRight : rotationLeft);
+        if(player != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            RotationZombie((transform.position.x < player.position.x) ? rotationRight : rotationLeft);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void SetFalseIsAttack() => isAttack = false;

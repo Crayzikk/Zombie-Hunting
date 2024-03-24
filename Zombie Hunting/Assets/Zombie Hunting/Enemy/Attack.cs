@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
                 if(!enemy.isAttack)
                 {
                     Health playerHealth = other.GetComponent<Health>();
-                    playerHealth.TakeDamage(enemy.damage);
+                    playerHealth.TakeDamage(enemy.damage, enemy.activeRotation);
                     enemy.isAttack = true;
                 }                
             }

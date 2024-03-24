@@ -8,9 +8,12 @@ public abstract class Enemy : MonoCache
     public bool isAttack = false;
     public abstract int damage { get; set; }
 
+    public int activeRotation;
+
     protected void RotationZombie(int turn)
     {
         transform.localRotation = Quaternion.Euler(0, turn, 0);
+        activeRotation = turn;
     }
 
     protected abstract void Move();
