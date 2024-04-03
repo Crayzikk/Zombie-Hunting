@@ -10,10 +10,9 @@ public class PlayerMovement : MonoCache
     private Timer timer;
     private bool isRunning;
     private Animator animator;
-
+    
     public static bool isPlayning;
     public static bool playerAttacked;
-    
 
     private void Start()
     {
@@ -65,6 +64,6 @@ public class PlayerMovement : MonoCache
     public void EndAttack()
     {
         playerAttacked = false;
-        animator.SetBool("Atack", false);
+        animator.SetBool("AtackBaseWeapon", false);
     }
 }

@@ -35,7 +35,7 @@ public class BaseWeapon : MonoCache
     
     private void Attack() 
     {
-        animator.SetBool("Atack", true);
+        animator.SetBool("AtackBaseWeapon", true);
         PlayerMovement.playerAttacked = true;
         triggers.Clear();
 

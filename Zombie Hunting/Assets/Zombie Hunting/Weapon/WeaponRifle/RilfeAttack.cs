@@ -1,0 +1,43 @@
+using UnityEngine;
+
+public class RilfeAttack : MonoCache
+{
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform spawn;
+    [SerializeField] private int damage = 45;
+
+    private Timer timer;
+    private bool shoot = false;
+
+    private void Start() 
+    {
+        timer = new Timer(0.2f);    
+    }
+
+    // Update
+    public override void OnTick()
+    {
+        if(Input.GetKey(KeyCode.Mouse0) && PlayerMovement.isPlayning)
+        {
+            if(shoot)
+            {
+                shoot = false;
+                Vector3 mousePosition = Mouse.GetMousePosition();
+                Vector3 direction = Direction.GetDirection(GetComponent<LookAtMouse>(), transform, mousePosition);
+                
+                GameObject bullet = Instantiate(bulletPrefab, spawn.position, Quaternion.identity);
+
+                bullet.GetComponent<BulletAttack>().damageBullet = damage;
+                bullet.GetComponent<MovingBullet>().directionMoving = direction;
+
+                Destroy(bullet, 20f);
+            }
+            else 
+            {
+                timer.RunTimer(SetShootTrue);
+            }
+        }
+    }
+
+    private void SetShootTrue() => shoot = true; 
+}
