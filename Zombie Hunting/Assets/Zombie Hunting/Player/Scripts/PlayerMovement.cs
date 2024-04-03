@@ -62,8 +62,8 @@ public class PlayerMovement : MonoCache
     }
 
     public void EndAttack()
-    {
+    { 
+        animator.SetBool("Atack", false);
         playerAttacked = false;
-        animator.SetBool("AtackBaseWeapon", false);
     }
 }
