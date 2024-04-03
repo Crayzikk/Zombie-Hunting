@@ -7,44 +7,44 @@ public class ShortgunAttack : MonoCache
     [SerializeField] private int damage = 55;
 
     private Timer timer;
-    private bool shoot = true;
+    private bool shoot = false;
     private int numberOfBullet = 3;
 
     private void Start() 
     {
-        timer = new Timer(0.4f);
+        timer = new Timer(1f);
     }
 
     public override void OnTick()
     {
-        if(Input.GetKey(KeyCode.Mouse0) && PlayerMovement.isPlayning)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && shoot)
         {
-            if(shoot)
-            {
-                shoot = false;
-                Vector3 mousePosition = Mouse.GetMousePosition();
-                Vector3 direction = Direction.GetDirection(GetComponent<LookAtMouse>(), transform, mousePosition);
-                
 
-                for (int currentBullet = 0; currentBullet < numberOfBullet; currentBullet++)
+            shoot = false;
+            Vector3 mousePosition = Mouse.GetMousePosition();
+            Vector3 direction = Direction.GetDirection(GetComponent<LookAtMouse>(), transform, mousePosition);
+
+
+            for (int currentBullet = 0; currentBullet < numberOfBullet; currentBullet++)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, spawn.position, Quaternion.identity);
+
+                if(currentBullet > 0)
                 {
-                    GameObject bullet = Instantiate(bulletPrefab, spawn.position, Quaternion.identity);
-                    
-                    if(currentBullet > 0)
-                    {
-                        direction.y += currentBullet == 1 ? 0.2f : -0.4f;
-                    }
-
-                    bullet.GetComponent<MovingBullet>().directionMoving = direction; 
-                    bullet.GetComponent<BulletAttack>().damageBullet = damage;
-                    
-                    Destroy(bullet, 20f);
+                    direction.y += currentBullet == 1 ? 0.2f : -0.4f;
                 }
+
+                bullet.GetComponent<MovingBullet>().directionMoving = direction; 
+                bullet.GetComponent<BulletAttack>().damageBullet = damage;
+
+                Destroy(bullet, 20f);
             }
-            else 
-            {
-                timer.RunTimer(SetShootTrue);
-            }
+            
+
+        }       
+        else if(!shoot)
+        {
+            timer.RunTimer(SetShootTrue);
         }
     }
 
