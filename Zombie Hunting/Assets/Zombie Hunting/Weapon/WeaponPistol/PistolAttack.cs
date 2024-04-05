@@ -30,6 +30,8 @@ public class PistolAttack : MonoCache
             bullet.GetComponent<BulletAttack>().damageBullet = damage;
             bullet.GetComponent<MovingBullet>().directionMoving = direction;
 
+            Inventory.ammo--;
+
             Destroy(bullet, 20f);
         }
         else if(shoot)

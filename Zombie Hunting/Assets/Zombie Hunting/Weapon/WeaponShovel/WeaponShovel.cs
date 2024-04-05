@@ -18,7 +18,7 @@ public class WeaponShovel : MonoCache
     //Update
     public override void OnTick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && !reloadBeforeThrowning && !CheckPointerEnter.poinetEnterInInterface)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && !reloadBeforeThrowning && !CheckPointerEnter.poinetEnterInInterface && Inventory.numberOfWeaponShovel > 0)
         {
             ThrowWeapon();
         }
@@ -38,6 +38,9 @@ public class WeaponShovel : MonoCache
         GameObject weapon = Instantiate(prefab, player.position, Quaternion.identity);
 
         weapon.GetComponent<MovingWeapon>().SetDirectionMoving(direction);
+        
+        Inventory.numberOfWeaponShovel--;
+
         Destroy(weapon, 10f);
     }
 

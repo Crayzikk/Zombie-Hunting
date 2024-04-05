@@ -24,7 +24,8 @@ public class ShortgunAttack : MonoCache
             Vector3 mousePosition = Mouse.GetMousePosition();
             Vector3 direction = Direction.GetDirection(GetComponent<LookAtMouse>(), transform, mousePosition);
 
-
+            Inventory.ammo -= 3;
+            
             for (int currentBullet = 0; currentBullet < numberOfBullet; currentBullet++)
             {
                 GameObject bullet = Instantiate(bulletPrefab, spawn.position, Quaternion.identity);

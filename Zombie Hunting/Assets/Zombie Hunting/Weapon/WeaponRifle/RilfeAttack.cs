@@ -30,6 +30,8 @@ public class RilfeAttack : MonoCache
                 bullet.GetComponent<BulletAttack>().damageBullet = damage;
                 bullet.GetComponent<MovingBullet>().directionMoving = direction;
 
+                Inventory.ammo--;
+
                 Destroy(bullet, 20f);
             }
             else 
