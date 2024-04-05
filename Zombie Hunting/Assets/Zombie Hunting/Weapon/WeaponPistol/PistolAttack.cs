@@ -18,7 +18,7 @@ public class PistolAttack : MonoCache
 
     public override void OnTick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && !shoot)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && !shoot && !CheckPointerEnter.poinetEnterInInterface && Inventory.ammo > 0)
         {
             shoot = true;
             Vector3 mousePos = Mouse.GetMousePosition();

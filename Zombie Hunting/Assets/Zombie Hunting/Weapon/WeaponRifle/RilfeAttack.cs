@@ -17,7 +17,7 @@ public class RilfeAttack : MonoCache
     // Update
     public override void OnTick()
     {
-        if(Input.GetKey(KeyCode.Mouse0) && PlayerMovement.isPlayning)
+        if(Input.GetKey(KeyCode.Mouse0) && PlayerMovement.isPlayning && !CheckPointerEnter.poinetEnterInInterface && Inventory.ammo > 0)
         {
             if(shoot)
             {

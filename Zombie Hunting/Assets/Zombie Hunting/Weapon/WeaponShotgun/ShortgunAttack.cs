@@ -10,14 +10,14 @@ public class ShortgunAttack : MonoCache
     private bool shoot = false;
     private int numberOfBullet = 3;
 
-    private void Start() 
+    private void Awake() 
     {
         timer = new Timer(1f);
     }
 
     public override void OnTick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && shoot)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && shoot && !CheckPointerEnter.poinetEnterInInterface && Inventory.ammo >= 3)
         {
 
             shoot = false;

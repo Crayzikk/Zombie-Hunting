@@ -18,7 +18,7 @@ public class LookAtMouse : MonoCache
     // Update
     public override void OnTick()
     {
-        if(PlayerMovement.isPlayning)
+        if(PlayerMovement.isPlayning && spriteRenderer != null)
         {
             Vector3 mousePos = Mouse.GetMousePosition();
 

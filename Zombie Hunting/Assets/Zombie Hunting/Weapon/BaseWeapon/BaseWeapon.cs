@@ -27,7 +27,7 @@ public class BaseWeapon : MonoCache
 
     public override void OnTick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && !PlayerMovement.playerAttacked && PlayerMovement.isPlayning)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !PlayerMovement.playerAttacked && PlayerMovement.isPlayning && !CheckPointerEnter.poinetEnterInInterface)
         {
             Attack();
         }

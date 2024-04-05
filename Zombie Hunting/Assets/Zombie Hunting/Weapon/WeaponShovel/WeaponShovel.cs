@@ -18,7 +18,7 @@ public class WeaponShovel : MonoCache
     //Update
     public override void OnTick()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && !reloadBeforeThrowning)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && PlayerMovement.isPlayning && !reloadBeforeThrowning && !CheckPointerEnter.poinetEnterInInterface)
         {
             ThrowWeapon();
         }
