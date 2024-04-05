@@ -39,6 +39,7 @@ public class BaseZombie : Enemy
         if(healthEnemy < 1)
         {
             Destroy(gameObject);
+            GetComponent<SpawnDrop>().SpawnsDrop();
         }
     }
 
