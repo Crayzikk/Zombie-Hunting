@@ -1611,6 +1611,7 @@ Transform:
   - {fileID: 512014364}
   - {fileID: 2115029978}
   - {fileID: 315686892}
+  - {fileID: 555021272}
   m_Father: {fileID: 361716680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1725,7 +1726,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &221284778
 Animator:
   serializedVersion: 3
@@ -3136,7 +3137,7 @@ Transform:
   m_GameObject: {fileID: 523838585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 880.93, y: 430.33, z: 0}
-  m_LocalScale: {x: 132.08943, y: 118.846855, z: 121.03781}
+  m_LocalScale: {x: 132.08943, y: 118.84684, z: 121.03781}
   m_Children: []
   m_Father: {fileID: 16058261}
   m_RootOrder: 0
@@ -3312,6 +3313,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &555021271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555021272}
+  m_Layer: 0
+  m_Name: TargetCoin
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &555021272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555021271}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00999999, y: -0.050207853, z: -21.214176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 221284773}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &577755027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,6 +3432,7 @@ GameObject:
   - component: {fileID: 587464735}
   - component: {fileID: 587464736}
   - component: {fileID: 587464737}
+  - component: {fileID: 587464738}
   m_Layer: 6
   m_Name: Zombie_1
   m_TagString: Enemy
@@ -3556,7 +3588,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &587464737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3569,6 +3601,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbc24600066cf44e859bfb6d399c91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &587464738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587464730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5f6821a42eb8f4ea5f7ac690eb2513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabCoin: {fileID: 4047645069723193895, guid: b96f785ae25e07144ae16e6a9f360d9f, type: 3}
+  targetCoin: {fileID: 555021272}
+  numberOfSpawns: 3
 --- !u!1 &592780630
 GameObject:
   m_ObjectHideFlags: 0

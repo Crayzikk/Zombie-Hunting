@@ -158,4 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab8b8defefacc74da5267a28b93cce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectTargetCoin: {fileID: 4502806452420447609, guid: 556a8b7c405857a4d9c0acee4b98c9fb, type: 3}
+  objectTargetCoin: {fileID: 8882958392527009665, guid: 556a8b7c405857a4d9c0acee4b98c9fb, type: 3}

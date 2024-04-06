@@ -9,7 +9,7 @@ public class Inventory : MonoCache
     public static int ammo { get; set; } = 0;
     public static int firstAidKit { get; set; } = 0;
     public static int coins { get; set; } = 0;
-
+    
     public override void OnTick()
     {
         numberOfWeaponShovel = Mathf.Max(numberOfWeaponShovel, 0);

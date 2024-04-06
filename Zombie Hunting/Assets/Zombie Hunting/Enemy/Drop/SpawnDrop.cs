@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpawnDrop : MonoBehaviour
 {
     [SerializeField] private GameObject prefabCoin;
+    [SerializeField] private Transform targetCoin;
     [SerializeField] private int numberOfSpawns;
 
     private float sphereRange = 2f;
@@ -16,6 +17,7 @@ public class SpawnDrop : MonoBehaviour
             GameObject coin = Instantiate(prefabCoin, transform.position, Quaternion.identity);
 
             coin.GetComponent<DropMovement>().targetPositionDeathDrop = endSpawnPosition;
+            coin.GetComponent<DropMovement>().targetPositionCoin = targetCoin;
         }
     }
 }
