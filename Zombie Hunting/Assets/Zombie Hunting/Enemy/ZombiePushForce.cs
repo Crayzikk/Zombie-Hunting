@@ -26,8 +26,8 @@ public class ZombiePushForce : MonoBehaviour
         {
             Vector2 normal = other.transform.position - transform.position;
             normal.Normalize();
-
-            Vector2 knockbackDirection = normal == Vector2.left ? Vector2.right : Vector2.left;
+            
+            Vector2 knockbackDirection = (normal.x < 0 && normal.x > -1) ? Vector2.right : Vector2.left;
             ApplyKnockback(knockbackDirection);
             Invoke("StopKnockback", 0.2f);
         }
