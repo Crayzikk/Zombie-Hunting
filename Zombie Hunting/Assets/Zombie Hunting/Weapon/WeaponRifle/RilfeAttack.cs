@@ -4,10 +4,11 @@ public class RilfeAttack : MonoCache
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawn;
-    [SerializeField] private int damage = 45;
 
     private Timer timer;
     private bool shoot = false;
+
+    public static int damage = 45;
 
     private void Start() 
     {

@@ -4,11 +4,12 @@ public class PistolAttack : MonoCache
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawn;
-    [SerializeField] private int damage = 40;
 
     private bool shoot = false;
     private Timer timer;
     private LookAtMouse lookAtMouse;
+
+    public static int damage = 40;
 
     private void Start() 
     {

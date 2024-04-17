@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class BaseZombie : Enemy
 {
-    [SerializeField] private int healthEnemy = 100;
-    [SerializeField] private float speed = 3f;
+    [SerializeField] private GameObject prefabSkillet;
+    
+    protected Timer timer;
 
-    private Animator animator;
-    private Rigidbody2D rigidbody;
-    private Timer timer;
-
+    protected override float speed { get; set; } = 3f;
+    protected override int healthEnemy { get; set; } = 100;
+    
     public override int damage { get; set; } = 15;
-    public Transform player;
-
+    
     private void Start() 
     {
-       timer = new Timer(0.6f);
+        timer = new Timer(0.6f);
     }
 
     // Updater
     public override void OnTick()
     {
+
         if(!isAttack && PlayerMovement.isPlayning)
         {
             Move();
@@ -31,30 +31,13 @@ public class BaseZombie : Enemy
             timer.RunTimer(SetFalseIsAttack);
         }
     }
-    
-    public override void TakeDamage(int damage)
-    {
-        healthEnemy -= damage;
-        
-        if(healthEnemy < 1)
-        {
-            Destroy(gameObject);
-            GetComponent<SpawnDrop>().SpawnsDrop();
-        }
-    }
 
-    protected override void Move()
+    protected override void DeathEnemy()
     {
-        if(player != null)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            RotationZombie((transform.position.x < player.position.x) ? rotationRight : rotationLeft);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        int rand = Random.Range(0, 4);
+        if(rand == 0)
+            Instantiate(prefabSkillet, transform.position, Quaternion.identity);
+ 
+        base.DeathEnemy();
     }
-
-    private void SetFalseIsAttack() => isAttack = false;
 }

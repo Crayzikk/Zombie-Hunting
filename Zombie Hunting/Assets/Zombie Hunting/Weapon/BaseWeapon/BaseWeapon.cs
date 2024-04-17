@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseWeapon : MonoCache
 {
-    public int damage = 25; 
+    public static int damage = 25; 
 
     [SerializeField] private Collider2D gameObjectCollider;
     

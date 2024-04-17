@@ -4,11 +4,12 @@ public class ShortgunAttack : MonoCache
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform spawn;
-    [SerializeField] private int damage = 55;
 
     private Timer timer;
     private bool shoot = false;
     private int numberOfBullet = 3;
+
+    public static int damage = 55;
 
     private void Awake() 
     {

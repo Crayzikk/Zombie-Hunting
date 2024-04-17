@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoCache
 {
-    [SerializeField] private float speed = 5f;
     [SerializeField] private float time = 0.001f;
 
     private const int rotationRight = 0;
@@ -11,6 +10,7 @@ public class PlayerMovement : MonoCache
     private bool isRunning;
     private Animator animator;
     
+    public static float speed = 4f;
     public static bool isPlayning;
     public static bool playerAttacked;
 
