@@ -14,9 +14,10 @@ public class ZombieStone : Enemy
 
     private void Start() 
     {
-        timer = new Timer(5f);    
+        timer = new Timer(8f);    
     }
 
+    // Update
     public override void OnTick()
     {
         if(PlayerMovement.isPlayning)
