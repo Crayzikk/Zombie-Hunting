@@ -15,6 +15,7 @@ public class BaseZombie : Enemy
     
     private void Start() 
     {
+        FindPlayer();
         timer = new Timer(0.6f);
     }
 
@@ -36,7 +37,10 @@ public class BaseZombie : Enemy
     {
         int rand = Random.Range(0, 4);
         if(rand == 0)
+        {
             Instantiate(prefabSkillet, transform.position, Quaternion.identity);
+            ZombieWave.numberOfEnemy++;
+        }
  
         base.DeathEnemy();
     }

@@ -43,10 +43,16 @@ public abstract class Enemy : MonoCache
 
     protected virtual void DeathEnemy()
     {
-       Destroy(gameObject);
-       GetComponent<SpawnDrop>().SpawnsDrop();
+        Destroy(gameObject);
+        GetComponent<SpawnDrop>().SpawnsDrop();
+        ZombieWave.numberOfEnemy--;
     }
 
+    protected virtual void FindPlayer()
+    {
+        GameObject Objplayer = GameObject.FindGameObjectWithTag("Player");
+        player = Objplayer.transform;
+    }
     
     protected void SetFalseIsAttack() => isAttack = false;
 }

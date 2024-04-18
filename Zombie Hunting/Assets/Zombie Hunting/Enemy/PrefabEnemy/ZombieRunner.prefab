@@ -242,7 +242,6 @@ MonoBehaviour:
   player: {fileID: 0}
   isAttack: 0
   activeRotation: 0
-  player: {fileID: 0}
 --- !u!114 &2751669134539579516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2751669134539579504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bab480211035cf74d88a050ee5d70445, type: 3}
   m_Name: 

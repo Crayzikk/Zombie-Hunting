@@ -29,6 +29,10 @@ public class PlayerMovement : MonoCache
         {
             MovePlayer();
         }
+        else if(!isPlayning)
+        {
+            SetAnimation(false);
+        }
     }
 
     private void MovePlayer()

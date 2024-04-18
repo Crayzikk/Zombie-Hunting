@@ -32,11 +32,8 @@ public class ButtonsController : MonoBehaviour
     {
         SetMainMenuAnimation(true);
         PlayerMovement.isPlayning = true;
-    }
-
-    public void EndPlay()
-    {
-        
+        ZombieWave.waveActive = true;
+        ZombieWave.startWave = true;
     }
 
     public void OpenShop()

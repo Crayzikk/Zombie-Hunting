@@ -3,21 +3,21 @@ using UnityEngine;
 public class ProjectileEvasion : ZombiePushForce
 {
     [SerializeField] private float evasionForce = 80f;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
     
     public Collider2D bulletCollider2D { get; set; }
     public bool avoidance = false;
 
-    private void Start() 
+    private void Awake() 
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        this.rb = GetComponent<Rigidbody2D>();
     }
 
     protected override void HandleCollision(Collider2D other)
     {
         if(avoidance)
         {
-            this.rigidbody.AddForce(Vector2.up * evasionForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * evasionForce, ForceMode2D.Impulse);
             Invoke("StopKnockback", 0.2f);       
         }
         else
@@ -28,12 +28,13 @@ public class ProjectileEvasion : ZombiePushForce
 
     protected override void ApplyKnockback(Vector2 direction)
     {
-        this.rigidbody.AddForce(direction * impulseForce, ForceMode2D.Impulse);
+        Debug.Log(this.rb);
+        rb.AddForce(direction * impulseForce, ForceMode2D.Impulse);
     }
 
     protected override void StopKnockback()
     {
         GetComponent<Enemy>().underAttack = false;
-        this.rigidbody.velocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
     }
 }

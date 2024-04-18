@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - BaseAttack
   - ZombieBullet
+  - TargetCoin
   layers:
   - Default
   - TransparentFX

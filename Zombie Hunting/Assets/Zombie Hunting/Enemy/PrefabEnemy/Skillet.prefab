@@ -121,11 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   underAttack: 0
-  player: {fileID: 0}
+  player: {fileID: 5712947936072106557, guid: 1330d4d96ecb4b1429df2bfc37f523fc, type: 3}
   isAttack: 0
   activeRotation: 0
   prefabSkillet: {fileID: 1876678217257452311}
-  player: {fileID: 0}
 --- !u!61 &1876678217257452302
 BoxCollider2D:
   m_ObjectHideFlags: 0

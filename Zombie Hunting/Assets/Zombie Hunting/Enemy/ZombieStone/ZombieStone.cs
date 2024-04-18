@@ -12,9 +12,10 @@ public class ZombieStone : Enemy
     public override int damage { get; set; } = 0;
     public bool playerInZone = false;
 
-    private void Start() 
+    private void Awake() 
     {
-        timer = new Timer(8f);    
+        FindPlayer();
+        timer = new Timer(5f);    
     }
 
     // Update
@@ -32,6 +33,6 @@ public class ZombieStone : Enemy
     private void SpawnRebelsSkillet()
     {
         GameObject rebelsSkillet = Instantiate(prefabRebelsSkillet, transform.position, Quaternion.identity);
-        Debug.Log(rebelsSkillet);
+        ZombieWave.numberOfEnemy++;
     }
 }

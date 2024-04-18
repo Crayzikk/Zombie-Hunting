@@ -8,7 +8,7 @@ public class Inventory : MonoCache
     public static int numberOfWeaponShovel { get; set; } = 0;
     public static int ammo { get; set; } = 0;
     public static int firstAidKit { get; set; } = 0;
-    public static int coins { get; set; } = 200;
+    public static int coins { get; set; } = 0;
     
     // Update
     public override void OnTick()

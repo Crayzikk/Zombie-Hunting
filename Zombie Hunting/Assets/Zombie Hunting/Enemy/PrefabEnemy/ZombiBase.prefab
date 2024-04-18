@@ -191,11 +191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   underAttack: 0
-  player: {fileID: 0}
+  player: {fileID: 5712947936072106557, guid: 1330d4d96ecb4b1429df2bfc37f523fc, type: 3}
   isAttack: 0
   activeRotation: 0
-  prefabSkillet: {fileID: 0}
-  player: {fileID: 0}
+  prefabSkillet: {fileID: 1876678217257452311, guid: 4d9dd4854f43b044494f38b0c95b28db, type: 3}
 --- !u!61 &5431797164419066730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -268,5 +267,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCoin: {fileID: 4047645069723193895, guid: b96f785ae25e07144ae16e6a9f360d9f, type: 3}
-  targetCoin: {fileID: 0}
+  targetCoin: {fileID: 5952320328110017445, guid: bfbc450eda8132e4195eb5bff75b7654, type: 3}
   numberOfSpawns: 3

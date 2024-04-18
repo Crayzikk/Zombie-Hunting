@@ -16,6 +16,7 @@ public class ZombieShooting : Enemy
     
     private void Start() 
     {
+        FindPlayer();
         animator = GetComponent<Animator>();
         timer = new Timer(3f);
     }
@@ -23,7 +24,7 @@ public class ZombieShooting : Enemy
     // Update
     public override void OnTick()
     {
-        if(PlayerMovement.isPlayning)
+        if(PlayerMovement.isPlayning && animator != null)
         {
             if(playerInZoneAttack && !playerInZoneRun)
             {

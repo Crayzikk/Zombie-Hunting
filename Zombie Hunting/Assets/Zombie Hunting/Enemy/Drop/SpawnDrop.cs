@@ -8,6 +8,12 @@ public class SpawnDrop : MonoBehaviour
 
     private float sphereRange = 2f;
 
+    private void Start() 
+    {
+        GameObject objTarget = GameObject.FindGameObjectWithTag("TargetCoin");   
+        targetCoin = objTarget.transform;  
+    }
+
     public void SpawnsDrop()
     {
         for (int drop = 0; drop < numberOfSpawns; drop++)
