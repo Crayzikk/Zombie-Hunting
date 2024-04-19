@@ -1702,6 +1702,7 @@ GameObject:
   - component: {fileID: 221284776}
   - component: {fileID: 221284778}
   - component: {fileID: 221284779}
+  - component: {fileID: 221284780}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Player
@@ -1869,6 +1870,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9be7b5f39295e84fac4d1b62d840b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &221284780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221284772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67419c799d1a94cb61f0c1ce851124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &228122107

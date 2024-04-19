@@ -8,7 +8,7 @@ public class RilfeAttack : MonoCache
     private Timer timer;
     private bool shoot = false;
 
-    public static int damage = 45;
+    public static int damage = 40;
 
     private void Start() 
     {

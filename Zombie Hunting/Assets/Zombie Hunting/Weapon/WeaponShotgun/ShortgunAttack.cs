@@ -13,7 +13,7 @@ public class ShortgunAttack : MonoCache
 
     private void Awake() 
     {
-        timer = new Timer(1f);
+        timer = new Timer(1.5f);
     }
 
     public override void OnTick()

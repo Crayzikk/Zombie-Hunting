@@ -8,10 +8,10 @@ public class Pumping : MonoCache
     [SerializeField] private Text shootUpPriceUI;
     [SerializeField] private Text healthUpPriceUI;
     
-    public static int speedUpPrice = 50;
-    public static int powerUpPrice = 50;
-    public static int shootUpPrice = 50;
-    public static int healthUpPrice = 50;
+    public static int speedUpPrice = 25;
+    public static int powerUpPrice = 25;
+    public static int shootUpPrice = 25;
+    public static int healthUpPrice = 25;
     
     public override void OnTick()
     {

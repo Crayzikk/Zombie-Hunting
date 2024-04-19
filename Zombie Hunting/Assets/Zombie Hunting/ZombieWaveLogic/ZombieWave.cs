@@ -11,20 +11,26 @@ public class ZombieWave : MonoCache
     private Timer timer;
     private int numberOfPointSpawn;
     private int[] numberOfSpawnEnemy;
-    private bool flagCounter = false;
+    private bool flagCounter;
 
     private int countInWaveBaseZombie;
     private int countInWaveRunnerZombie;
     private int countInWaveStoneZombie;
     private int countInWaveShooterZombie;
 
-    public static bool startWave = false;
-    public static bool waveActive = false;
-    public static int numberOfEnemy = 6;
-    public static int currentWave = 0;
+    public static bool startWave;
+    public static bool waveActive;
+    public static int numberOfEnemy;
+    public static int currentWave;
     
     private void Start() 
     {
+        numberOfEnemy = 6;
+        currentWave = 0;
+        startWave = false;
+        waveActive = false;
+        flagCounter = false;
+
         timer = new Timer(4f, true);
         numberOfPointSpawn = pointSpawn.Length;
         numberOfSpawnEnemy = new int[] {numberOfEnemy, 0, 0, 0};
@@ -88,7 +94,7 @@ public class ZombieWave : MonoCache
         {
             numberOfSpawnEnemy[1]++;
         }
-        else if(currentWave >= 2 && currentWave < 3)
+        else if(currentWave >= 3 && currentWave < 4)
         {
             numberOfSpawnEnemy[2]++;
         }

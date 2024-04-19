@@ -9,11 +9,11 @@ public class PistolAttack : MonoCache
     private Timer timer;
     private LookAtMouse lookAtMouse;
 
-    public static int damage = 40;
+    public static int damage = 30;
 
     private void Start() 
     {
-        timer = new Timer(0.3f);
+        timer = new Timer(0.6f);
         lookAtMouse = GetComponent<LookAtMouse>();
     }
 
