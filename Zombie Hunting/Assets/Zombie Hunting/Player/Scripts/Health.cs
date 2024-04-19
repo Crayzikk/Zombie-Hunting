@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public static int maxHealth = 100;
-    public static int health = maxHealth;
+    public static int health;
 
     private Rigidbody2D rb;
     private static int recoveryOfHealth = 25;
@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
 
     private void Start() 
     {
+        health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
     }
 

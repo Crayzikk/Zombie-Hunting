@@ -10,12 +10,12 @@ public class Goods : MonoCache
     [SerializeField] private Text firstAidKitpriceUI;
     [SerializeField] private Text ammoPriceUI;
 
-    public static int weaponShovelPrice = 20;
-    public static int weaponPistolPrice = 200;
-    public static int weaponRiflePrice = 370;
-    public static int weaponShortGunPrice = 450;
-    public static int firstAidKitprice = 35;
-    public static int ammoPrice = 15;
+    public static int weaponShovelPrice = 10;
+    public static int weaponPistolPrice = 50;
+    public static int weaponRiflePrice = 100;
+    public static int weaponShortGunPrice = 150;
+    public static int firstAidKitprice = 20;
+    public static int ammoPrice = 1;
 
     // Update 
     public override void OnTick()
